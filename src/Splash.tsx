@@ -1,8 +1,9 @@
 import { LinearGradient } from 'expo-linear-gradient';
-import { Image, Text, View } from "native-base";
+import { Image, Pressable, Text, View } from "native-base";
+import SplashBtn from './componentes/SplashBtn';
 import { TEMAS } from "./estilos/temas";
 
-export default function Splash() {
+export default function Splash( { navigation } ) {
     return (
         <LinearGradient
             style={{
@@ -12,12 +13,13 @@ export default function Splash() {
         >
             <View style={{ flex: 1 }}>
                 <Image
-                    source={require("./assets/hero2.png")}
+                    source={require("./assets/splashImg3.png")}
                     alt='Icone Idoso'
                     style={{
-                        height: 100,
-                        width: 100,
+                        height: 130,
+                        width: 130,
                         position: "absolute",
+                        objectFit: "contain",
                         top: 10,
                         transform: [
                             { translateX: 20 },
@@ -27,12 +29,13 @@ export default function Splash() {
                     }}
                 />
                 <Image
-                    source={require("./assets/hero2.png")}
+                    source={require("./assets/splashImg2.png")}
                     alt='Icone Idoso'
                     style={{
-                        height: 100,
-                        width: 100,
+                        height: 130,
+                        width: 130,
                         position: "absolute",
+                        objectFit: "contain",
                         top: -30,
                         left: 130,
                         transform: [
@@ -43,12 +46,13 @@ export default function Splash() {
                     }}
                 />
                 <Image
-                    source={require("./assets/hero2.png")}
+                    source={require("./assets/splashImg1.png")}
                     alt='Icone Idoso'
                     style={{
-                        height: 100,
-                        width: 100,
+                        height: 130,
+                        width: 130,
                         position: "absolute",
+                        objectFit: "contain",
                         top: 160,
                         left: -30,
                         transform: [
@@ -59,14 +63,15 @@ export default function Splash() {
                     }}
                 />
                 <Image
-                    source={require("./assets/hero1.png")}
+                    source={require("./assets/splashImg4.png")}
                     alt='Icone Idoso'
                     style={{
-                        height: 170,
-                        width: 170,
+                        height: 230,
+                        width: 230,
                         position: "absolute",
+                        objectFit: "contain",
                         top: 110,
-                        left: 120,
+                        left: 80,
                         transform: [
                             { translateX: 50 },
                             { translateY: 50 },
@@ -104,6 +109,37 @@ export default function Splash() {
                             color: TEMAS.colors.white,
                             width: "80%"
                         }}>Nunca mais esqueça aquele Remédio</Text>
+                    </View>
+
+                    <SplashBtn
+                        titleSplashBtn="Crie uma conta"
+                        onPress={()=>navigation.navigate("Cadastro")}
+                        style={{
+                            marginTop: 22,
+                            width: "100%",
+                            fontWeight: 'bold'
+                        }}
+                    >
+                    </SplashBtn>
+
+                    <View style={{
+                        flexDirection:"row",
+                        marginTop: 12,
+                        justifyContent: "center"
+                    }}>
+                        <Text style={{
+                            fontSize: 16,
+                            color: TEMAS.colors.white
+                        }}>Já tem uma conta? </Text>
+                        <Pressable
+                         onPress={()=>navigation.navigate("Login")}
+                        >
+                            <Text style={{
+                                fontSize: 16,
+                                color: TEMAS.colors.white,
+                                fontWeight: "bold"
+                            }}>Login</Text>
+                        </Pressable>
                     </View>
                 </View>
             </View>
