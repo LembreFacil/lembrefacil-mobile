@@ -1,15 +1,14 @@
 import { NativeBaseProvider, StatusBar } from 'native-base';
 import React from 'react';
-import Splash from './src/Splash';
-
 import { TEMAS } from './src/estilos/temas';
+import Cadastro from './src/Cadastro';
 
 
 export default function App() {
   return (
     <NativeBaseProvider theme={TEMAS}>
       <StatusBar backgroundColor={TEMAS.colors.black}/>
-      <Splash/>
+      <Cadastro/>
     </NativeBaseProvider>
   );
 }

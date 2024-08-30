@@ -1,60 +1,214 @@
-import { Box, Image, Link, Text, VStack } from 'native-base';
-import { Dimensions, TouchableOpacity } from 'react-native';
-import logo from './assets/Lembre-removebg-preview.png';
-import { Botao } from './componentes/Botao';
-import { EntradaDeTexto } from './componentes/EntradaDeTexto';
-import { Titulo } from './componentes/Titulo';
+import { Ionicons } from "@expo/vector-icons";
+import { Checkbox, Text, View } from 'native-base';
+import { useState } from "react";
+import { Dimensions, TextInput, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { TEMAS } from './estilos/temas';
 
-export default function Login() {
+export default function Cadastro() {
   const { height } = Dimensions.get('window'); // Obtenha a altura da tela do dispositivo
-
+  const [ isPasswordShown, setIsPasswordShown ] = useState(false)
+  const [ isChecked, setIsChecked] = useState(false);
   return (
-    <VStack 
-      flex={1} 
-      alignItems="center" 
-      justifyContent="center"
-      p={5}
-    >
-      <Box
-        width="100%"
-        alignItems="center"
-        justifyContent="center"
-        mb={3}
-      >
-        <Image 
-          source={logo} 
-          alt="Logo LembreFácil" 
-          size={height * 0.2} // 20% da altura da tela para manter responsividade
-          resizeMode="contain" // Garante que a imagem se ajuste ao espaço disponível
-        />
-      </Box>
+  
+    <SafeAreaView style={{ flex:1, backgroundColor: TEMAS.colors.white }}>
+      <View style={{ flex:1, marginHorizontal: 22}}>
+        <View style={{ marginVertical:22 }}>
+            <Text style={{
+              fontSize: 22,
+              fontWeight: "bold",
+              marginVertical: 12,
+              color: TEMAS.colors.black
+            }}>
+              Crie sua conta
+            </Text>
 
-      <Titulo>
-        Cadastro
-      </Titulo>
+            <Text style={{
+              fontSize: 16,
+              color: TEMAS.colors.black
+            }}>
+              Nunca perca uma Consulta ou Remédio!
+            </Text>
+        </View>
 
-      <Box width="100%">
-        <EntradaDeTexto placeholder='Insira seu Email'/>
-        <EntradaDeTexto placeholder='Insira sua Senha'/>
-        <Botao>ENTRAR</Botao>
-      </Box>
+        <View style={{ marginBottom:12 }}>
+            <Text style={{
+              fontSize:16,
+              fontWeight:400,
+              marginVertical: 8
+            }}>
+              Nome
+            </Text>
 
+            <View style={{
+              width: "100%",
+              height: 48,
+              borderColor: TEMAS.colors.black,
+              borderWidth: 1,
+              borderRadius: 8,
+              alignItems: "center",
+              justifyContent: "center",
+              paddingLeft: 22
+            }}>
+              <TextInput
+                placeholder='Insira seu nome'
+                placeholderTextColor={TEMAS.colors.black}
+                keyboardType='default'
+                style={{
+                  width: "100%"
+                }}
+              />
+            </View>
+        </View>
 
-      <Link href='https://www.linkedin.com/in/igor-silva-472669202/' mt={2}>
-        Esqueceu sua senha?
-      </Link>
+        <View style={{ marginBottom:12 }}>
+            <Text style={{
+              fontSize:16,
+              fontWeight:400,
+              marginVertical: 8
+            }}>
+              CPF
+            </Text>
 
-      <Box 
-        flexDirection={'row'}
-        width={'100%'}
-        justifyContent={'center'}
-        mt={5}
-      >
-        <Text>Ainda não tem cadastro? </Text>
-        <TouchableOpacity>
-          <Text color={'lightGreen'} fontWeight={'semibold'}>Faça seu cadastro!</Text>
-        </TouchableOpacity>
-      </Box>
-    </VStack>
+            <View style={{
+              width: "100%",
+              height: 48,
+              borderColor: TEMAS.colors.black,
+              borderWidth: 1,
+              borderRadius: 8,
+              alignItems: "center",
+              justifyContent: "center",
+              paddingLeft: 22
+            }}>
+              <TextInput
+                placeholder='Insira seu CPF'
+                placeholderTextColor={TEMAS.colors.black}
+                keyboardType='numeric'
+                style={{
+                  width: "100%"
+                }}
+              />
+            </View>
+        </View>
+
+        <View style={{ marginBottom:12 }}>
+            <Text style={{
+              fontSize:16,
+              fontWeight:400,
+              marginVertical: 8
+            }}>
+              Cartão do SUS
+            </Text>
+
+            <View style={{
+              width: "100%",
+              height: 48,
+              borderColor: TEMAS.colors.black,
+              borderWidth: 1,
+              borderRadius: 8,
+              alignItems: "center",
+              justifyContent: "center",
+              paddingLeft: 22
+            }}>
+              <TextInput
+                placeholder='Insira seu cartão do SUS'
+                placeholderTextColor={TEMAS.colors.black}
+                keyboardType='numeric'
+                style={{
+                  width: "100%"
+                }}
+              />
+            </View>
+        </View>
+
+        <View style={{ marginBottom:12 }}>
+            <Text style={{
+              fontSize:16,
+              fontWeight:400,
+              marginVertical: 8
+            }}>
+              Email
+            </Text>
+
+            <View style={{
+              width: "100%",
+              height: 48,
+              borderColor: TEMAS.colors.black,
+              borderWidth: 1,
+              borderRadius: 8,
+              alignItems: "center",
+              justifyContent: "center",
+              paddingLeft: 22
+            }}>
+              <TextInput
+                placeholder='Insira seu Email'
+                placeholderTextColor={TEMAS.colors.black}
+                keyboardType='email-address'
+                style={{
+                  width: "100%"
+                }}
+              />
+            </View>
+        </View>
+
+        <View style={{ marginBottom:12 }}>
+            <Text style={{
+              fontSize:16,
+              fontWeight:400,
+              marginVertical: 8
+            }}>
+              Senha
+            </Text>
+
+            <View style={{
+              width: "100%",
+              height: 48,
+              borderColor: TEMAS.colors.black,
+              borderWidth: 1,
+              borderRadius: 8,
+              alignItems: "center",
+              justifyContent: "center",
+              paddingLeft: 22
+            }}>
+              <TextInput
+                placeholder='Insira sua Senha'
+                placeholderTextColor={TEMAS.colors.black}
+                secureTextEntry={isPasswordShown}
+                style={{
+                  width: "100%"
+                }}
+              />
+
+              <TouchableOpacity 
+              onPress={()=>setIsPasswordShown(!isPasswordShown)}
+              style={{
+                position: "absolute",
+                right: 12
+              }}>
+                {
+                  isPasswordShown == true ? (
+                    <Ionicons name="eye-off" size={24} color={TEMAS.colors.black}/>
+                  ) : (
+                      <Ionicons name="eye" size={24} color={TEMAS.colors.black}/>
+                  )
+                }
+              </TouchableOpacity>
+            </View>
+        </View>
+        
+        <View style={{
+          flexDirection: 'row',
+          marginVertical: 6
+        }}>
+          <Checkbox
+           style={{marginRight: 8}}
+           value={isChecked}
+           onValueChange={setIsChecked}
+          />
+          
+        </View>
+      </View>
+    </SafeAreaView>
+
   );
 }
