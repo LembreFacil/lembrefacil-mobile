@@ -13,6 +13,8 @@ export function Titulo({ children, ...rest }: TituloProps) {
         color={'black'}
         textAlign={'center'}
         {...rest}
+        marginTop={3}
+        marginBottom={3}
       >
         {children}
       </Text>

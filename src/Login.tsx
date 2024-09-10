@@ -104,7 +104,7 @@ export default function Login({ navigation }) {
             <SplashBtn
               titleSplashBtn="Entrar"
               style={{ marginTop: 18 }}
-              onPress={() => navigation.navigate('Home')}
+              onPress={() => navigation.navigate('Tabs')}
             />
 
             <View style={{ flexDirection: "row", alignItems: "center", marginVertical: 6, marginTop: 20 }}>
