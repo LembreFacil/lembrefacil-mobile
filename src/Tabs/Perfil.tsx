@@ -13,7 +13,7 @@ const medicalHistory = [
 
 export default function Perfil() {
   return (
-    <ScrollView flex={1}>
+    <ScrollView>
       <VStack flex={1} alignItems="center" p={5}>
         <CustomBox>
           <Box style={styles.profileContainer}>
