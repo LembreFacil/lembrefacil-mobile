@@ -3,6 +3,8 @@ import { Box, Text, VStack, HStack, Icon, Button } from 'native-base';
 import { MaterialIcons } from '@expo/vector-icons';
 import { ScrollView } from 'react-native';
 import CustomBox from '../componentes/CustomBox';
+import { Botao } from '../componentes/Botao';
+import { TEMAS } from "../estilos/temas";
 
 
 export default function Principal(){
@@ -10,16 +12,11 @@ export default function Principal(){
         <ScrollView>
         <VStack space={4} padding={5}>
           {/* Título */}
-          <Box alignItems="center">
+          <HStack alignItems="center">
+            <Icon as={MaterialIcons} name="favorite" size="lg" color={TEMAS.colors.lightGreen} marginRight={2} />
             <Text fontSize="2xl" bold>Relatório de Saúde</Text>
-          </Box>
-  
-          {/* Status de Saúde Geral */}
-          <HStack justifyContent="center" alignItems="center">
-            <Icon as={MaterialIcons} name="favorite" size="lg" color="green.500" marginRight={10} />
-            <Text fontSize="xl" bold>Status Geral: Saudável</Text>
           </HStack>
-  
+    
           {/* Informações Vitais */}
           <CustomBox>
             <VStack space={3}>
@@ -30,6 +27,18 @@ export default function Principal(){
               <HStack justifyContent="space-between">
                 <Text fontSize="md">Frequência Cardíaca:</Text>
                 <Text fontSize="md" bold>72 bpm</Text>
+              </HStack>
+              <HStack justifyContent="space-between">
+                <Text fontSize="md">Peso(kg):</Text>
+                <Text fontSize="md" bold>70,80</Text>
+              </HStack>
+              <HStack justifyContent="space-between">
+                <Text fontSize="md">Altura(m):</Text>
+                <Text fontSize="md" bold>1,75</Text>
+              </HStack>
+              <HStack justifyContent="space-between">
+                <Text fontSize="md">IMC:</Text>
+                <Text fontSize="md" bold>Peso Ideal</Text>
               </HStack>
             </VStack>
           </CustomBox>
@@ -50,9 +59,9 @@ export default function Principal(){
           </CustomBox>
   
           {/* Botão para Mais Informações */}
-          <Button size="lg" colorScheme="teal" marginTop={5}>
+          <Botao size="lg" colorScheme="teal" marginTop={5}>
             Mais Informações
-          </Button>
+          </Botao>
         </VStack>
       </ScrollView>
     )

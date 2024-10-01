@@ -3,7 +3,7 @@ import { extendTheme } from 'native-base'
 export const TEMAS = extendTheme({
     colors: {
         black: '#000000',
-        darkGreen: '#054351',
+        darkGreen: '#00282e',
         lightGreen: '#0097B2',
         lightBlue: '#CDF6FF',
         lightGray: '#D9D9D9',

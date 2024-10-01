@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Dimensions, TextInput, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import BotaoEscolherData from './componentes/BotaoEscolherData';
-import { EntradaDeTexto } from "./componentes/EntradaDeTexto";
+import { EntradaDeTexto }  from "./componentes/EntradaDeTexto";
 import SplashBtn from "./componentes/SplashBtn";
 import { TEMAS } from './estilos/temas';
 

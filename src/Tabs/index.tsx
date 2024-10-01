@@ -28,14 +28,14 @@ const tabsInfo = [
         icon: 'calendar',
     },
     {
-        name: 'Perfil',
-        component: Perfil, // Corrigido para referenciar o componente
-        icon: 'person',
-    },
-    {
         name: 'Remédios',
         component: Remedios, // Corrigido para referenciar o componente
         icon: 'medkit',
+    },
+    {
+        name: 'Perfil',
+        component: Perfil, // Corrigido para referenciar o componente
+        icon: 'person',
     },
 ];
 
